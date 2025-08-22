@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Logo from "/DevTogether_Logo.png";
 import Footer from './components/Footer';
 import "./App.css";
+import { NavLink } from 'react-router';
 
 
 function App() {
@@ -25,8 +26,8 @@ function App() {
         </div>
         <div className='buttons'>
           <p className='SUmessage'>Signing up is free!</p>
-          <button className='signUp'>Sign up</button>
-          <button className='logIn'>Log in</button>
+          <NavLink to='register' className='signUp'>Sign up</NavLink>
+          <NavLink to='login' className='logIn'>Log in</NavLink>
           <p className='LImessage'>Logging in is also free 😜</p>
         </div>
 
