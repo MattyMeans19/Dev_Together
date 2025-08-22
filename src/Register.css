@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+
+.resiter{
+    @apply  flex flex-col w-screen;
+}
+.register img{
+    @apply size-[10rem];
+}
+
+.head{
+    background: #07702c;
+    background: linear-gradient(275deg,rgba(7, 112, 44, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(98, 237, 83, 1) 100%);
+    @apply w-full place-items-center text-7xl pb-5;
+}

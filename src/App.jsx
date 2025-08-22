@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Logo from "/DevTogether_Logo.png";
 import Footer from './components/Footer';
-import "./App.css";
+import "./Styles/App.css";
 import { NavLink } from 'react-router';
 
 
