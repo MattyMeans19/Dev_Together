@@ -79,13 +79,32 @@ function Register(){
                 <input type="password" id="password" minLength="8" title="Only letters and numbers are allowed" placeholder="*Password" name="password" value={userData.password} onChange={inputUserData} required></input>
                 <label htmlFor="password" id="passwordLabel">Password must be at least 8 characters and can use Letters, Numbers, and Symbols.</label>
                 <div className="questionaire">
-                    <p className="title4">Select any that apply to you. This will help other users see you when they're searching for talent.</p>
-                    <input type="checkbox" id="artist" name="artist"></input>
-                    <input type="checkbox" id="musician" name="musician"></input>
-                    <input type="checkbox" id="gameDev" name="gameDev"></input>
-                    <input type="checkbox" id="webDev" name="webDev"></input>
-                    <input type="checkbox" id="video" name="video"></input>
-                    <input type="checkbox" id="actor" name="actor"></input>
+                    <p className="title4">Select any that apply to you. This will help other users see you when they're searching for talent. Can be edited anytime in account settings.</p>
+                    <div className="selections">
+                        <label htmlFor="artist">I am an artist of some kind.</label>
+                        <input type="checkbox" id="artist" name="artist" value={userData.artist}></input>   
+                    </div>
+                    <div className="selections">
+                        <label htmlFor="musician">I produce/record music.</label>
+                        <input type="checkbox" id="musician" name="musician" value={userData.musician}></input> 
+                    </div>
+                    <div className="selections">
+                        <label htmlFor="gameDev">I write code or produce designs for games.</label>
+                        <input type="checkbox" id="gameDev" name="gameDev" value={userData.gameDev}></input> 
+                    </div>
+                    <div  className="selections">
+                        <label htmlFor="webDev">I write code for front-end and/or back-end code for websites.</label>
+                        <input type="checkbox" id="webDev" name="webDev" value={userData.webDev}></input>
+                    </div>
+                    <div  className="selections">
+                        <label htmlFor="video">I record/edit videos.</label>
+                        <input type="checkbox" id="video" name="video" value={userData.video}></input>
+                    </div>
+                    <div  className="selections">
+                        <label htmlFor="actor">I am an actor/voice actor.</label>
+                        <input type="checkbox" id="actor" name="actor" value={userData.actor}></input>
+                    </div>
+                    
                 </div>
             </form>
             <Footer />

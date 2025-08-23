@@ -25,10 +25,10 @@
     @apply size-[10rem] md:size-[25rem];
 }
 .Motto1{
-    @apply text-center text-[3rem] md:text-[5rem] md:place-self-start md:pt-15 animate-fade-down animate-once animate-duration-1000 animate-ease-in font-display;
+    @apply text-center text-[3rem] md:text-[4rem] md:place-self-start md:pt-15 animate-fade-down animate-once animate-duration-1000 animate-ease-in font-display;
 }
 .Motto2{
-    @apply text-center text-[3rem] md:text-[5rem] md:place-self-end md:pb-15 animate-fade-up animate-once animate-duration-1000 animate-delay-1000 animate-ease-in font-display;
+    @apply text-center text-[3rem] md:text-[4rem] md:place-self-end md:pb-15 animate-fade-up animate-once animate-duration-1000 animate-delay-1000 animate-ease-in font-display;
 }
 
 .content{
