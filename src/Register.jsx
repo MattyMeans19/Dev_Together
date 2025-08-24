@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from "react";
 import Logo from "/DevTogether_Logo.png";
 import Footer from "./components/Footer.jsx"
+import Iframe from "react-iframe";
 
 function Register(){
-    const [userData, setUserData] = useState({
+        const [userData, setUserData] = useState({
         firstName: '',
         lastName: '',
         email: '',
@@ -15,7 +16,9 @@ function Register(){
         gameDev: false,
         webDev: false,
         video: false,
-        actor: false
+        actor: false,
+        ToS: false,
+        PP: false
     })
 
     const [ageVerified, setAgeVerified] = useState(false);
@@ -66,25 +69,25 @@ function Register(){
             <h1 className="text-5xl place-self-center my-15 text-center">Complete the registration form below to set up your account.</h1>
             <form className="MediaBox md:w-[80vw] justify-self-center flex flex-col md:inline-grid grid-cols-6 gap-10 md:gap-1 p-5 md:p-15">
                 <h2 className="title row-start-1 col-start-2 col-span-4 mb-10">Personal Info</h2>
-                <input type="text" id="fName" pattern="[a-zA-Z]" title="Only letters allowed" placeholder="*First Name" 
-                name="fName" value={userData.firstName} onChange={inputUserData} required className="inputBox row-start-2 col-span-2 col-start-2 md:place-self-end">
+                <input type="text" id="fName" placeholder="*First Name" className="inputBox row-start-2 col-span-2 col-start-2 md:place-self-end"
+                name="firstName" pattern="[a-zA-Z]+" value={userData.firstName} onChange={inputUserData} required>
                 </input>
-                <input type="text" id="lName" pattern="[a-zA-Z]" title="Only letters allowed" placeholder="*LastName"
-                name="lName" value={userData.lastName} onChange={inputUserData} required className="inputBox row-start-2 col-span-2 md:place-self-start">
+                <input type="text" id="lName" placeholder="*LastName" className="inputBox row-start-2 col-span-2 md:place-self-start"
+                name="lastName" pattern="[a-zA-Z]+" value={userData.lastName} onChange={inputUserData} required>
                  </input>
-                <input type="text" id="email" placeholder="*Email Address" className="inputBox row-start-3 col-start-2 col-span-4 md:my-10"
+                <input type="email" id="email" placeholder="*Email Address" className="inputBox row-start-3 col-start-2 col-span-4 md:my-10"
                 name="email" value={userData.email} onChange={inputUserData} required>
                 </input>
                 <label htmlFor="dob" className="row-start-4 col-start-2 text-center md:place-self-end text-3xl">*Date Of Birth:</label>
-                <input type="date" id="dob" className="w-full md:w-fit row-start-4 col-start-3 col-span-2 text-3xl place-self-center"
+                <input type="date" id="dob" className="w-full md:w-fit row-start-4 col-start-3 col-span-1 text-3xl place-self-center"
                  name="dob" value={userData.dob} onChange={inputUserData} required>
                  </input>
-                {ageVerified ? null : <p className="row-start-4 col-start-5 col-span-2 text-red-600 place-content-center text-center">**Due to potential adult content users must be 18 years or older to sign up**</p>}
+                {ageVerified ? null : <p className="row-start-4 col-start-4 col-span-2 text-red-600 place-content-center text-center">**Due to potential adult content users must be 18 years or older to sign up**</p>}
                 <p className="title row-start-5 col-start-2 col-span-4 my-15">Profile Information</p>
-                <input type="text" id="userName" pattern="[a-zA-Z0-9]" title="Only letters and numbers are allowed" placeholder="*User Name" 
+                <input type="text" id="userName" pattern="[a-zA-Z0-9]+" title="Only letters and numbers are allowed" placeholder="*User Name" 
                 name="userName" value={userData.userName} onChange={inputUserData} required className="inputBox row-start-6 col-start-2 col-span-2">
                 </input>
-                <label htmlFor="userName" className="row-start-7 col-start-2 col-span-2 text-center">Username can only contain Letters and Numbers.</label>
+                <label htmlFor="userName" className="row-start-7 col-start-2 col-span-2 text-center">Username must contain Letters and Numbers.</label>
                 <input type="password" id="password" minLength="8" title="Only letters and numbers are allowed" placeholder="*Password" 
                 name="password" value={userData.password} onChange={inputUserData} required className="inputBox row-start-6 col-start-4 col-span-2">
                 </input>
@@ -104,7 +107,7 @@ function Register(){
                         <input type="checkbox" id="gameDev" name="gameDev" value={userData.gameDev}></input> 
                     </div>
                     <div  className="selections">
-                        <label htmlFor="webDev">I write code for front-end and/or back-end code for websites.</label>
+                        <label htmlFor="webDev">I write code for front-end and/or back-end for websites.</label>
                         <input type="checkbox" id="webDev" name="webDev" value={userData.webDev}></input>
                     </div>
                     <div  className="selections">
@@ -115,8 +118,23 @@ function Register(){
                         <label htmlFor="actor">I am an actor/voice actor.</label>
                         <input type="checkbox" id="actor" name="actor" value={userData.actor}></input>
                     </div>
-                    
                 </div>
+                <p className="title row-start-9 col-start-2 col-span-4">Please read and accept the Terms of Use</p>
+                <Iframe src="src\components\Tos.html"
+                height="1000px"
+                    className="w-full row-start-10 row-span-4 col-start-2 col-span-4 SecondaryMedia place-self-center"
+                />
+                <div  className="selections row-start-16 col-start-2 col-span-4 mt-5">
+                    <label htmlFor="ToS">I have read and accept the terms of use.</label>
+                    <input type="checkbox" id="Tos" name="ToS" value={userData.ToS} required></input>
+                </div>
+                <p className="SecondaryMedia row-start-17 col-start-2 col-span-4 text-3xl mt-15">We don't have a formal privacy policy at this time, but will update it here in the future. 
+                        For now, please trust that we won't be selling any of the data that we collect from you for ANY reason, and we will trust that you do the same!</p>
+                <div className=" selections row-start-18 col-start-2 col-span-4 mt-15">
+                    <label htmlFor="PP">I have read and accept the privacy policy.</label>
+                    <input type="checkbox" id="PP" name="PP" value={userData.PP} required></input>
+                </div>
+                <input type="submit" className="PrimaryButton row-start-20 row-span-2 min-h-full col-start-3 col-span-2 mt-15 place-self-center"></input>
             </form>
             <Footer />
         </div>
