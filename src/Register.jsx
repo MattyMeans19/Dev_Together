@@ -84,10 +84,10 @@ function Register(){
                  </input>
                 {ageVerified ? null : <p className="row-start-4 col-start-4 col-span-2 text-red-600 place-content-center text-center">**Due to potential adult content users must be 18 years or older to sign up**</p>}
                 <p className="title row-start-5 col-start-2 col-span-4 my-15">Profile Information</p>
-                <input type="text" id="userName" pattern="[a-zA-Z0-9]+" title="Only letters and numbers are allowed" placeholder="*User Name" 
+                <input type="text" id="userName" maxLength="12" placeholder="*User Name" 
                 name="userName" value={userData.userName} onChange={inputUserData} required className="inputBox row-start-6 col-start-2 col-span-2">
                 </input>
-                <label htmlFor="userName" className="row-start-7 col-start-2 col-span-2 text-center">Username must contain Letters and Numbers.</label>
+                <label htmlFor="userName" className="row-start-7 col-start-2 col-span-2 text-center">Username cannot be more than 12 characters.</label>
                 <input type="password" id="password" minLength="8" title="Only letters and numbers are allowed" placeholder="*Password" 
                 name="password" value={userData.password} onChange={inputUserData} required className="inputBox row-start-6 col-start-4 col-span-2">
                 </input>
