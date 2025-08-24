@@ -1,6 +1,66 @@
 @import "tailwindcss";
 @import "tailwindcss-animated";
 
+.carter-one-regular {
+  font-family: "Carter One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 @theme{
   --colorPref: rgba(0, 100, 0, 0.85);
+  --font-display: "Carter One", system-ui;
+  --system-background: #07702c;
+  --background-gradient: 275deg,rgba(7, 112, 44, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(98, 237, 83, 1) 100%;
+}
+
+.bigHeader{
+    @apply bg-(--system-background) bg-linear-(--background-gradient) w-full place-self-center md:h-[20rem] place-items-center shadow-2xl shadow-gray-500 border-solid border-b-10 border-emerald-900 rounded-b-4xl inline-flex flex-col md:flex-row justify-around p-5;
+}
+
+.PrimaryBox{
+    @apply  shadow-2xl shadow-black border-5 border-black/50 bg-emerald-400/20 rounded-4xl;
+}
+.PrimaryTitle{
+    @apply text-center text-[3.5rem] underline;
+}
+.PrimaryContent{
+    @apply text-center text-[1.5rem] md:text-[2rem];
+}
+.SecondaryBox{
+    @apply shadow-2xl shadow-black/60 border-3 border-gray-600/30 rounded-4xl bg-lime-500/30;
+}
+.PrimaryButton{
+    @apply bg-emerald-400/60 p-5 border-2 rounded-full text-3xl hover:bg-emerald-400 active:bg-emerald-800 basis-1/3 text-center;
+}
+.SecondaryButton{
+    @apply bg-gray-200/60 p-5 border-2 rounded-full text-3xl hover:bg-gray-400 active:bg-gray-800 basis-1/3 text-center;
+}
+
+.TertiaryBox{
+    @apply bg-green-400/40 border-5 border-gray-600/40 rounded-4xl shadow-2xl shadow-black px-15;
+}
+.title{
+    @apply text-center text-4xl underline;
+}
+.inputBox{
+    @apply w-full md:w-auto place-self-center;
+}
+.MediaBox{
+    @apply border-10 border-green-700/45 rounded-4xl inset-shadow-[10px_10px_10px_10px] inset-shadow-emerald-800/30 shadow-2xl shadow-gray-700/80 place-self-center;
+}
+.MediaBox input{
+    @apply rounded-2xl shadow-xl shadow-black/25 border-1 border-gray-800/65 w-[80%] h-[3rem] text-3xl px-5;
+}
+.SecondaryMedia{
+    @apply  border-5 border-emerald-300/40 rounded-2xl shadow-xl shadow-black/25 p-5 place-items-center mx-5 md:mx-0 md:px-35;
+}
+.selections{
+    @apply inline-flex flex-nowrap text-[1.5rem] w-full border-b-1;
+}
+.selections label{
+    @apply basis-2/3 text-start;
+}
+.selections input{
+    @apply w-full basis-1/3 shadow-none place-self-center h-[1.5rem];
 }

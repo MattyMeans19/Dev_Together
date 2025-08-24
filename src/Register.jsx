@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import Logo from "/DevTogether_Logo.png";
-import "./Register.css";
 import Footer from "./components/Footer.jsx"
 
 function Register(){
@@ -59,27 +58,39 @@ function Register(){
 
 
     return(
-        <div className="register">
-            <div className="head">
-                <img src={Logo}></img>
+        <div className="flex flex-col max-w-screen font-display">
+            <div className="w-full place-items-center text-7xl pb-5 bg-(--system-background) bg-linear-(--background-gradient)">
+                <img src={Logo} className="size-[10rem]"></img>
                 <h1>Register</h1>
             </div>
-            <h1 className="title">Complete the registration form below to set up your account.</h1>
-            <form className="registrationForm">
-                <h2 className="title2">Personal Info</h2>
-                <input type="text" id="fName" pattern="[a-zA-Z]" title="Only letters allowed" placeholder="*First Name" name="fName" value={userData.firstName} onChange={inputUserData} required></input>
-                <input type="text" id="lName" pattern="[a-zA-Z]" title="Only letters allowed" placeholder="*LastName" name="lName" value={userData.lastName} onChange={inputUserData} required></input>
-                <input type="text" id="email" placeholder="*Email Address" name="email" value={userData.email} onChange={inputUserData} required></input>
-                <label htmlFor="dob" className="dob">*Date Of Birth:</label>
-                <input type="date" id="dob" name="dob" value={userData.dob} onChange={inputUserData} required></input>
-                {ageVerified ? null : <p className="ageVerification">**Due to potential adult content users must be 18 years or older to sign up**</p>}
-                <p className="title3">Profile Information</p>
-                <input type="text" id="userName" pattern="[a-zA-Z0-9]" title="Only letters and numbers are allowed" placeholder="*User Name" name="userName" value={userData.userName} onChange={inputUserData} required></input>
-                <label htmlFor="userName" id="uNameLabel">Username can only contain Letters and Numbers.</label>
-                <input type="password" id="password" minLength="8" title="Only letters and numbers are allowed" placeholder="*Password" name="password" value={userData.password} onChange={inputUserData} required></input>
-                <label htmlFor="password" id="passwordLabel">Password must be at least 8 characters and can use Letters, Numbers, and Symbols.</label>
-                <div className="questionaire">
-                    <p className="title4">Select any that apply to you. This will help other users see you when they're searching for talent. Can be edited anytime in account settings.</p>
+            <h1 className="text-5xl place-self-center my-15 text-center">Complete the registration form below to set up your account.</h1>
+            <form className="MediaBox md:w-[80vw] justify-self-center flex flex-col md:inline-grid grid-cols-6 gap-10 md:gap-1 p-5 md:p-15">
+                <h2 className="title row-start-1 col-start-2 col-span-4 mb-10">Personal Info</h2>
+                <input type="text" id="fName" pattern="[a-zA-Z]" title="Only letters allowed" placeholder="*First Name" 
+                name="fName" value={userData.firstName} onChange={inputUserData} required className="inputBox row-start-2 col-span-2 col-start-2 md:place-self-end">
+                </input>
+                <input type="text" id="lName" pattern="[a-zA-Z]" title="Only letters allowed" placeholder="*LastName"
+                name="lName" value={userData.lastName} onChange={inputUserData} required className="inputBox row-start-2 col-span-2 md:place-self-start">
+                 </input>
+                <input type="text" id="email" placeholder="*Email Address" className="inputBox row-start-3 col-start-2 col-span-4 md:my-10"
+                name="email" value={userData.email} onChange={inputUserData} required>
+                </input>
+                <label htmlFor="dob" className="row-start-4 col-start-2 text-center md:place-self-end text-3xl">*Date Of Birth:</label>
+                <input type="date" id="dob" className="w-full md:w-fit row-start-4 col-start-3 col-span-2 text-3xl place-self-center"
+                 name="dob" value={userData.dob} onChange={inputUserData} required>
+                 </input>
+                {ageVerified ? null : <p className="row-start-4 col-start-5 col-span-2 text-red-600 place-content-center text-center">**Due to potential adult content users must be 18 years or older to sign up**</p>}
+                <p className="title row-start-5 col-start-2 col-span-4 my-15">Profile Information</p>
+                <input type="text" id="userName" pattern="[a-zA-Z0-9]" title="Only letters and numbers are allowed" placeholder="*User Name" 
+                name="userName" value={userData.userName} onChange={inputUserData} required className="inputBox row-start-6 col-start-2 col-span-2">
+                </input>
+                <label htmlFor="userName" className="row-start-7 col-start-2 col-span-2 text-center">Username can only contain Letters and Numbers.</label>
+                <input type="password" id="password" minLength="8" title="Only letters and numbers are allowed" placeholder="*Password" 
+                name="password" value={userData.password} onChange={inputUserData} required className="inputBox row-start-6 col-start-4 col-span-2">
+                </input>
+                <label htmlFor="password" className="row-start-7 col-start-4 col-span-2 text-center md:px-15">Password must be at least 8 characters and can use Letters, Numbers, and Symbols.</label>
+                <div className="SecondaryMedia row-start-8 col-start-2 col-span-4 my-10 inline-flex flex-col gap-5">
+                    <p className="text-2xl text-center">Select any that apply to you. This will help other users see you when they're searching for talent. Can be edited anytime in account settings.</p>
                     <div className="selections">
                         <label htmlFor="artist">I am an artist of some kind.</label>
                         <input type="checkbox" id="artist" name="artist" value={userData.artist}></input>   
